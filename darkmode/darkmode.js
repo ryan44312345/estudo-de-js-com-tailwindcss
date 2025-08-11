@@ -1,4 +1,5 @@
 const trc = document.getElementById('troca')
+const trc2 = document.getElementById('troca2')
 const corpo = document.getElementById('body')
 const corpo2 = document.getElementById('body')
 const caixa = document.getElementById('box')
@@ -24,15 +25,15 @@ let intervalo;
 trc.addEventListener('click', () => {
     avisotema.classList.toggle('hidden')
 })
+trc2.addEventListener('click', () => {
+    avisotema.classList.toggle('hidden')
+})
 
 sim.addEventListener('click', () => {
     corpo.classList.toggle('bg-black')
     corpo.classList.toggle('bg-white')
     corpo.classList.toggle('text-white')
     corpo.classList.toggle('text-black')
-    trc.classList.toggle('text-white')
-    trc.classList.toggle('bg-slate-100')
-    trc.classList.toggle('bg-slate-950')
     caixa.classList.toggle('bg-slate-950')
     caixa.classList.toggle('bg-slate-300')
     caixa.classList.toggle('border-black')
@@ -46,6 +47,7 @@ sim.addEventListener('click', () => {
     botaomenu.classList.toggle('text-white')
     menu.classList.toggle('bg-slate-400')
     menu.classList.toggle('bg-slate-900')
+    trc2.classList.toggle('text-white')
     avisotema.classList.toggle('hidden')
     caixa3.classList.toggle('bg-slate-900')
     caixa3.classList.toggle('bg-slate-200')
@@ -53,6 +55,8 @@ sim.addEventListener('click', () => {
     caixa2.classList.toggle('bg-slate-800')
     caixa2.classList.toggle('bg-slate-200')
     caixa2.classList.toggle('border-black')
+    trc.classList.toggle('hidden')
+    trc2.classList.toggle('hidden')
 })
 
 nao.addEventListener('click', () => {
