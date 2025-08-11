@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="">
+<html lang="pt-br" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-black text-white" id="body">
-    <div class="flex flex-col relative" id="body2">
-    <div class="max-w-52 bg-slate-900 z-10 relative h-182 -translate-x-full transition-transform duration-300 ease-out" id="aside">
+<body class="bg-black text-white h-full" id="body">
+    <div class="w-52 bg-slate-900 z-10 fixed h-182 -translate-x-full transition-transform duration-300 ease-out" id="aside">
         <div class="w-18 mx-auto">
-        <button class="px-3 py-2 bg-white text-black font-semibold rounded-3xl mt-5 cursor-pointer" id="asidebutton">Fechar</button>
+        <button class="px-3 py-2 bg-white text-black font-semibold rounded-3xl mt-5 cursor-pointer hover:scale-110 ease-in-out duration-300" id="asidebutton">Fechar</button>
         </div>
         <p class="mb-8 mt-10 text-center cursor-pointer hover:underline">Lorem</p>
         <p class="text-center mb-10 cursor-pointer hover:underline ">Lorem</p>
@@ -18,14 +17,15 @@
         <p class="text-center mb-10 cursor-pointer hover:underline ">Lorem</p>
         <p class="text-center cursor-pointer hover:underline">Lorem</p>
     </div>
-    <div class="max-w-52" id="aside2">
-    <div class="w-18 absolute top-1/29 -translate-y-1/6 left-1/16 -translate-x-1/2">
-        <button class="px-3 py-2 bg-white text-black font-semibold rounded-3xl cursor-pointer" id="asidebutton2">Menu</button>
+    <nav class="max-h-20 flex flex-row justify-between mb-20">
+        <div class="w-18">
+        <button class="mt-4 ml-15 px-3 py-2 bg-white text-black font-semibold rounded-3xl cursor-pointer hover:scale-110 ease-in-out duration-300" id="asidebutton2">Menu</button>
     </div>
+    <div class="">
+        <button class="bg-slate-600 px-4 py-3 rounded-3xl cursor-pointer hover:scale-110 ease-in-out duration-300 font-semibold mt-4 mr-15" id="troca">Tema claro</button>
     </div>
-    <div class="top-1/13 left-1/2 -translate-x-1/2 -translate-y-1/6 absolute">
-        <button class="bg-slate-600 px-4 py-3 rounded-3xl cursor-pointer hover:scale-110 ease-in-out duration-300 font-semibold" id="troca">Tema claro</button>
-    </div>
+    </nav>
+    <div class="flex flex-col items-center h-full" id="body2">
     <div id="modal" class="max-w-xl text-black bg-white fixed left-1/2 -translate-x-1/2 top-50 z-30 -translate-y-1/2 rounded-2xl border hidden">
         <div class="px-4 py-3 mb-10">
         <h1 class="font-semibold">Você deseja trocar de tema?</h1>
@@ -39,12 +39,45 @@
             </div>
         </div>
     </div>
-    <div class="max-w-xl bg-slate-950 absolute left-1/2 -translate-x-1/2 top-30 rounded-2xl border" id="box">
+    <div class="flex flex-row gap-10 mb-10">
+        <div class="my-auto">
+            <button class="cursor-pointer" id="back">
+            <svg class="hover:scale-120 ease-in-out duration-300" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-left-icon lucide-arrow-big-left"><path d="M13 9a1 1 0 0 1-1-1V5.061a1 1 0 0 0-1.811-.75l-6.835 6.836a1.207 1.207 0 0 0 0 1.707l6.835 6.835a1 1 0 0 0 1.811-.75V16a1 1 0 0 1 1-1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z"/></svg>
+            </button>
+        </div>
+        <div class="max-w-xl bg-slate-950 rounded-2xl border" id="box">
         <h1 class="text-center px-4 py-3 font-semibold text-xl">Lorem ipsum dolor</h1>
         <p class="text-center px-10 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sed nostrum, sapiente quaerat illum dolores! Dolore, autem magnam ex iure qui minima, recusandae incidunt facilis adipisci dolores cupiditate earum eum ratione ut iste vero sapiente soluta ab maiores voluptatem distinctio corrupti. Excepturi explicabo doloremque alias maxime odio ipsa sunt nisi.</p>
+        
     </div>
-    <div id="carrossel" class="overflow-hidden w-50 max-w-4xl absolute left-1/2 -translate-x-1/2 top-100">
+      <div class="max-w-xl bg-slate-800 rounded-2xl border hidden" id="box2">
+        <h1 class="text-center px-4 py-3 font-semibold text-xl">Lorem ipsum dolor</h1>
+        <p class="text-center px-10 py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis, sapiente explicabo voluptates consequuntur vitae porro, expedita doloribus reprehenderit hic non. Veniam nemo quod placeat enim. Itaque, minima tenetur. Cupiditate?</p>
+        
+    </div>
+      <div class="max-w-xl bg-slate-900 rounded-2xl border hidden" id="box3">
+        <h1 class="text-center px-4 py-3 font-semibold text-xl">Lorem ipsum dolor</h1>
+        <p class="text-center px-10 py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque est, eaque dolore delectus, animi culpa iure consequuntur, quo voluptatem molestiae minima laborum? Quaerat aliquam dolorem adipisci sint ratione, distinctio sed!p>
+        
+    </div>
+    <div class="my-auto">
+            <button class="cursor-pointer" id="go">
+            <svg class="hover:scale-120 ease-in-out duration-300" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right-icon lucide-arrow-big-right"><path d="M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z"/></svg>
+            </button>
+        </div>
+    </div>
+    <div id="carrossel" class="overflow-hidden max-w-4xl flex flex-row gap-10">
+        <div class="my-auto">
+            <button class="cursor-pointer" id="back2">
+            <svg class="hover:scale-120 ease-in-out duration-300" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-left-icon lucide-arrow-big-left"><path d="M13 9a1 1 0 0 1-1-1V5.061a1 1 0 0 0-1.811-.75l-6.835 6.836a1.207 1.207 0 0 0 0 1.707l6.835 6.835a1 1 0 0 0 1.811-.75V16a1 1 0 0 1 1-1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z"/></svg>
+            </button>
+        </div>
         <img src="img/funny-dog-picture-j1uewwx9yy5v7okm.webp" id="imagem" alt="" class="w-full rounded-full border-[5px] ">
+        <div class="my-auto">
+            <button class="cursor-pointer" id="go2">
+            <svg class="hover:scale-120 ease-in-out duration-300" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right-icon lucide-arrow-big-right"><path d="M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z"/></svg>
+            </button>
+        </div>
     </div>
     </div>
     

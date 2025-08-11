@@ -2,6 +2,12 @@ const trc = document.getElementById('troca')
 const corpo = document.getElementById('body')
 const corpo2 = document.getElementById('body')
 const caixa = document.getElementById('box')
+const caixa2 = document.getElementById('box2')
+const caixa3 = document.getElementById('box3')
+const voltar = document.getElementById('back')
+const avancar = document.getElementById('go')
+const voltar2 = document.getElementById('back2')
+const avancar2 = document.getElementById('go2')
 const botaomenu = document.getElementById('asidebutton')
 const menu = document.getElementById('aside')
 const botaomenu2 = document.getElementById('asidebutton2')
@@ -41,6 +47,12 @@ sim.addEventListener('click', () => {
     menu.classList.toggle('bg-slate-400')
     menu.classList.toggle('bg-slate-900')
     avisotema.classList.toggle('hidden')
+    caixa3.classList.toggle('bg-slate-900')
+    caixa3.classList.toggle('bg-slate-200')
+    caixa3.classList.toggle('border-black')
+    caixa2.classList.toggle('bg-slate-800')
+    caixa2.classList.toggle('bg-slate-200')
+    caixa2.classList.toggle('border-black')
 })
 
 nao.addEventListener('click', () => {
@@ -49,11 +61,9 @@ nao.addEventListener('click', () => {
 
 botaomenu.addEventListener('click', () => {
     menu.classList.toggle('-translate-x-full')
-    menu2.classList.toggle('hidden')
 })
 
 botaomenu2.addEventListener('click', () => {
-    menu2.classList.toggle('hidden')
     menu.classList.toggle('-translate-x-full')
 })
 
@@ -62,16 +72,61 @@ function trocarImagem() {
     img.src = imagens[contador]
 }
 
+function trocarImagem2() {
+    contador = (contador - 1 + imagens.length) % imagens.length
+    img.src = imagens[contador]
+}
+
 function iniciar() {
+    clearInterval(intervalo)
     intervalo = setInterval(trocarImagem, 3000)
 }
+
 
 function pararContagem() {
     clearInterval(intervalo)
 }
+avancar2.addEventListener('click', () => {
+        trocarImagem()
+        iniciar()
+    })
+
+voltar2.addEventListener('click', () => {
+        trocarImagem2()
+        iniciar()
+    })
 
 iniciar()
 
 carrossel.addEventListener("mouseenter", pararContagem)
 
 carrossel.addEventListener("mouseleave", iniciar)
+
+
+function voltarFunction(acao, ...slides) {
+    acao.addEventListener('click', () => {
+    let slideAtual = slides.findIndex(slide => !slide.classList.contains('hidden'));
+    slides[slideAtual].classList.add('hidden');
+
+    let anteriorSlide = (slideAtual - 1 + slides.length) % slides.length;
+
+    slides[anteriorSlide].classList.remove('hidden');
+    })   
+}
+
+// part 1. Explicação do código acima (voltarFunction), o parametro dessa function é composta por um parametro padrão (acao) que não é uma array e uma lista/array (...slides) ele vira uma array no momento em que há 3 pontos atrás do mesmo.
+// part 2. Funções dos parametros. Cada parametro tem a sua função, o parametro "acao" tem a função de ser a const que vai receber a ação de click, sendo substituida por uma const que é clicavel 
+
+function avancarFunction(acao, ...slides) {
+    acao.addEventListener('click', () => {
+    let slideAtual = slides.findIndex(slide => !slide.classList.contains('hidden'))
+    slides[slideAtual].classList.add('hidden')
+
+    let proximoSlide = (slideAtual + 1) % slides.length
+    slides[proximoSlide].classList.remove('hidden')
+    })
+}
+
+voltarFunction(voltar, caixa, caixa2, caixa3)
+
+avancarFunction(avancar, caixa, caixa2, caixa3)
